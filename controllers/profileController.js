@@ -75,11 +75,10 @@ exports.getProfile = async (req, res) => {
 exports.updateProfile = async (req, res) => {
   try {
     // Only allow updating specific fields
-    const { name, rollNumber, class: className, department, teacher, phoneNumber } = req.body;
+    const { rollNumber, class: className, department, teacher, phoneNumber } = req.body;
 
     // Build profile object with only allowed fields
     const profileFields = {};
-    if (name) profileFields.name = name;
     if (rollNumber) profileFields.rollNumber = rollNumber;
     if (className) profileFields.class = className;
     if (department) profileFields.department = department;
